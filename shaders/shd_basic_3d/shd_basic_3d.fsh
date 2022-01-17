@@ -37,9 +37,7 @@ void main() {
 	vec3 lightColor = vec3(1., 0.5, 0.5);
 	vec3 lightAmbient = vec3(0.1, 0.1, 0.1);
 	
-	vec3 worldNormal = normalize(gm_Matrices[MATRIX_WORLD] * vec4(in_Normal, 0.)).xyz;
-	
-	float NdotL = max(dot(worldNormal, lightDir), 0.);
+	float NdotL = max(dot(v_WorldNormal, lightDir), 0.);
 	*/
 	
 	/*point light
