@@ -1,11 +1,4 @@
 /// @description Setup 3D
-#macro SHADOW_MAP_SIZE	2048
-#macro LIGHT_RANGE		512
-light_forward = array_create(3);
-light_right = array_create(3);
-light_up = array_create(3);
-light_pos = array_create(3);
-
 gpu_set_ztestenable(true);
 gpu_set_zwriteenable(true);
 gpu_set_cullmode(cull_counterclockwise);
@@ -15,6 +8,7 @@ direction = 0;
 z = 32;
 
 move_speed = 6;
+mouse_lock = true;
 
 view_mat = undefined;
 proj_mat = undefined;
@@ -25,8 +19,6 @@ light_pos_z = 0;
 light_dir_x = 0;
 light_dir_y = 0;
 light_dir_z = 0;
-
-window_set_cursor(cr_none);
 
 vertex_format_begin();
 vertex_format_add_position_3d();

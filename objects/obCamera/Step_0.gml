@@ -1,13 +1,24 @@
-/// @description Mouse look
-direction -= (display_mouse_get_x() - display_get_width()/2) / 10;
-pitch = clamp(pitch - (display_mouse_get_y() - display_get_height()/2) / 10, -80, 80);
+/// @description Mouse look and movement
+if(mouse_lock) {
+	window_set_cursor(cr_none);
+	
+	direction -= (window_mouse_get_x() - window_get_width()/2) / 10;
+	pitch = clamp(pitch - (window_mouse_get_y() - window_get_height()/2) / 10, -80, 80);
 
-display_mouse_set(display_get_width() / 2, display_get_height()/2);
+	window_mouse_set(window_get_width() / 2, window_get_height()/2);
+} else {
+	window_set_cursor(cr_arrow);
+}
 
 if(keyboard_check(vk_escape)) {
     game_end();
 }
 
+if(keyboard_check_pressed(vk_control)) {
+	mouse_lock = !mouse_lock;
+}
+
+//movement
 var fb_speed = keyboard_check(ord("W")) - keyboard_check(ord("S")) * move_speed * _dt;
 var zoom = (mouse_wheel_up() - mouse_wheel_down()) * move_speed * 100 * _dt;
 x += dcos(direction) * (fb_speed + zoom);
