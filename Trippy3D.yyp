@@ -8,6 +8,7 @@
     {"id":{"name":"spSkybox","path":"sprites/spSkybox/spSkybox.yy",},"order":1,},
     {"id":{"name":"cross","path":"scripts/cross/cross.yy",},"order":0,},
     {"id":{"name":"shd_basic_3d","path":"shaders/shd_basic_3d/shd_basic_3d.yy",},"order":0,},
+    {"id":{"name":"shd_depth","path":"shaders/shd_depth/shd_depth.yy",},"order":1,},
     {"id":{"name":"vertex_add_point","path":"scripts/vertex_add_point/vertex_add_point.yy",},"order":0,},
     {"id":{"name":"world_to_screen","path":"scripts/world_to_screen/world_to_screen.yy",},"order":4,},
     {"id":{"name":"screen_to_world","path":"scripts/screen_to_world/screen_to_world.yy",},"order":5,},
@@ -28,9 +29,8 @@
     {"name":"Linux","path":"options/linux/options_linux.yy",},
     {"name":"macOS","path":"options/mac/options_mac.yy",},
   ],
-  "isDnDProject": false,
+  "defaultScriptType": 1,
   "isEcma": false,
-  "tutorialPath": "",
   "configs": {
     "name": "Default",
     "children": [],
@@ -59,7 +59,7 @@
     {"targets":-1,"resourceVersion":"1.3","name":"audiogroup_default","resourceType":"GMAudioGroup",},
   ],
   "TextureGroups": [
-    {"isScaled":true,"autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
+    {"isScaled":true,"compressFormat":"bz2","autocrop":true,"border":2,"mipsToGenerate":0,"groupParent":null,"targets":-1,"resourceVersion":"1.3","name":"Default","resourceType":"GMTextureGroup",},
   ],
   "IncludedFiles": [
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"merry.obj","resourceType":"GMIncludedFile",},
@@ -69,9 +69,9 @@
     {"CopyToMask":-1,"filePath":"datafiles","resourceVersion":"1.0","name":"maxip4d.obj","resourceType":"GMIncludedFile",},
   ],
   "MetaData": {
-    "IDEVersion": "2.3.7.606",
+    "IDEVersion": "2022.3.0.625",
   },
-  "resourceVersion": "1.4",
+  "resourceVersion": "1.5",
   "name": "Trippy3D",
   "tags": [],
   "resourceType": "GMProject",

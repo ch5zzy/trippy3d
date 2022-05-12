@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spMaxip4d","path":"sprites/spMaxip4d/spMaxip4d.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spMaxip4d",
     "tags": [],
     "resourceType": "GMSequence",

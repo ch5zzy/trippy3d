@@ -27,6 +27,9 @@ vertex_format_add_texcoord();
 vertex_format_add_color();
 vformat = vertex_format_end();
 
+shadowmap_size = 4096;
+shadowmap_surface = surface_create(shadowmap_size, shadowmap_size);
+
 #region floor
 vfloor = vertex_create_buffer();
 vertex_begin(vfloor, vformat);

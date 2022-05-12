@@ -16,6 +16,16 @@ varying vec3 v_WorldViewProjPosition;
 varying vec3 v_WorldPosition;
 varying vec3 v_WorldNormal;
 
+varying float v_LightDistance;
+varying vec2 v_ShadowTexcoord;
+
+uniform sampler2D s_DepthTexture;
+
+const vec3 UNDO = vec3(1., 256., 65536.) / 16777215. * 255.;
+float fromDepthColor(vec3 color) {
+	return dot(color, UNDO);
+}
+
 void main() {
 	vec4 start_color = v_vColour * texture2D(gm_BaseTexture, v_vTexcoord);
 	
@@ -62,5 +72,14 @@ void main() {
     float att = f * max((lightRange - lightDist) / lightRange, 0.);
 
 	vec4 final_color = start_color * vec4(min(lightAmbient + att * lightColor * NdotL, vec4(1.)).rgb, 1.);
-    gl_FragColor = final_color;
+	
+	vec4 sampleDepthColor = texture2D(s_DepthTexture, v_ShadowTexcoord);
+	float depthVal = fromDepthColor(sampleDepthColor.rgb);
+	
+	float bias = 0.0005;
+	if (v_LightDistance > depthVal + bias) {
+		final_color.rgb *= 0.5;
+	}
+	
+	gl_FragColor = final_color;
 }

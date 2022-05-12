@@ -59,7 +59,7 @@
     "eventToFunction": {},
     "eventStubScript": null,
     "parent": {"name":"spSkybox","path":"sprites/spSkybox/spSkybox.yy",},
-    "resourceVersion": "1.3",
+    "resourceVersion": "1.4",
     "name": "spSkybox",
     "tags": [],
     "resourceType": "GMSequence",
